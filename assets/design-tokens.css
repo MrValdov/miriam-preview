@@ -1,0 +1,12 @@
+:root {
+  --act-navy: #1d3e59;
+  --act-blue: #1265a5;
+  --act-lime: #8ab540;
+  --act-mint: #d9f4d3;
+  --act-cream: #f7f9f4;
+  --act-ink: #17364d;
+  --act-orange: #f8753d;
+  --act-line: rgba(138,181,64,.42);
+  --act-radius: 16px;
+  --act-content-width: 1180px;
+}
