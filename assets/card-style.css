@@ -53,3 +53,36 @@ header.wrap.nav{width:100%;max-width:none;background:var(--act-navy)}
 
 /* Avoid percentage row gaps overflowing the stacked introduction on mobile. */
 @media(max-width:850px){.about-grid{grid-template-columns:minmax(0,1fr);column-gap:0;row-gap:32px}.about-aside{margin-top:0}.about{padding-bottom:65px}.testimonials{padding-top:65px}}
+
+/* Client arrow reference: broad, winding route through all three sections. */
+.leadership-journey{isolation:isolate;background:#fff;padding:0 35px}.leadership-journey::before,.leadership-journey::after,.leadership-journey>.section::before{content:none}.journey-path{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:fill;z-index:-1;pointer-events:none;opacity:.65}.leadership-journey>.section{background:transparent}.leadership-journey .cards{position:relative}.leadership-journey .card{box-shadow:none}
+@media(max-width:850px){.leadership-journey{padding:0 20px}.journey-path{opacity:.45}}
+@media(max-width:600px){.leadership-journey{padding:0 10px}.journey-path{opacity:.35}.leadership-journey .wrap{padding-left:16px;padding-right:16px}}
+
+/* Responsive winding path built from section borders. */
+.leadership-journey{--path-color:#d8e5c5;--path-width:12px;--path-radius:70px;padding:0 26px;margin:42px auto;isolation:auto}
+.leadership-journey>.section{position:relative;border:0;padding:76px 18px;background:transparent}
+.leadership-journey>.challenges{border-top:var(--path-width) solid var(--path-color);border-right:var(--path-width) solid var(--path-color);border-bottom:var(--path-width) solid var(--path-color);border-radius:0 var(--path-radius) var(--path-radius) 0;margin-right:0;margin-left:30px}
+.leadership-journey>.approach{border-left:var(--path-width) solid var(--path-color);border-bottom:var(--path-width) solid var(--path-color);border-radius:var(--path-radius) 0 0 var(--path-radius);margin-top:calc(-1 * var(--path-width));margin-left:0;margin-right:30px}
+.leadership-journey>.programs{border-right:var(--path-width) solid var(--path-color);border-bottom:var(--path-width) solid var(--path-color);border-radius:0 var(--path-radius) var(--path-radius) 0;margin-top:calc(-1 * var(--path-width));margin-left:30px;margin-right:0}
+.leadership-journey>.programs::after{content:"";position:absolute;bottom:calc(-1 * var(--path-width) / 2 - 14px);left:-2px;width:0;height:0;border-top:14px solid transparent;border-bottom:14px solid transparent;border-right:25px solid var(--path-color)}
+.leadership-journey>.section::before{content:none}
+@media(max-width:850px){.leadership-journey{--path-width:9px;--path-radius:45px;padding:0 20px}.leadership-journey>.section{padding:60px 10px}.leadership-journey>.challenges,.leadership-journey>.programs{margin-left:20px}.leadership-journey>.approach{margin-right:20px}}
+@media(max-width:600px){.leadership-journey{--path-width:7px;--path-radius:30px;padding:0 12px;margin:28px auto}.leadership-journey>.section{padding:48px 3px}.leadership-journey>.challenges,.leadership-journey>.programs{margin-left:12px}.leadership-journey>.approach{margin-right:12px}.leadership-journey .wrap{padding-left:15px;padding-right:15px}.leadership-journey>.programs::after{bottom:calc(-1 * var(--path-width) / 2 - 10px);border-top-width:10px;border-bottom-width:10px;border-right-width:18px}}
+
+/* Equal-width adjoining borders keep upper curves uniformly rounded. */
+.leadership-journey>.approach,.leadership-journey>.programs{border-top:var(--path-width) solid var(--path-color)}
+
+/* Confirmed partial border lengths, measured against each section width. */
+.leadership-journey>.section{border-color:transparent}
+.leadership-journey>.section>.wrap{position:relative;z-index:1}
+.leadership-journey>.section::before{content:"";position:absolute;inset:calc(-1 * var(--path-width));width:auto;height:auto;box-sizing:border-box;background:none;border:var(--path-width) solid var(--path-color);border-radius:inherit;pointer-events:none;z-index:0}
+.leadership-journey>.challenges::before{border-left:0;clip-path:polygon(0 0,100% 0,100% 100%,25% 100%,25% calc(100% - var(--path-width)),0 calc(100% - var(--path-width)))}
+.leadership-journey>.approach::before{border-right:0;clip-path:inset(0 25% 0 0)}
+.leadership-journey>.programs::before{border-left:0;clip-path:polygon(25% 0,100% 0,100% 100%,10% 100%,10% calc(100% - var(--path-width)),0 calc(100% - var(--path-width)),0 var(--path-width),25% var(--path-width))}
+.leadership-journey>.programs::after{left:10%;bottom:calc(-1 * var(--path-width) / 2 - 14px)}
+@media(max-width:600px){.leadership-journey>.programs::after{left:10%;bottom:calc(-1 * var(--path-width) / 2 - 10px)}}
+
+/* Anchor the arrowhead's flat base at the 90% line endpoint. */
+.leadership-journey>.programs::after{left:auto;right:90%;border-right-width:25px}
+@media(max-width:600px){.leadership-journey>.programs::after{left:auto;right:90%;border-right-width:18px}}
