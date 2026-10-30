@@ -86,3 +86,19 @@ header.wrap.nav{width:100%;max-width:none;background:var(--act-navy)}
 /* Anchor the arrowhead's flat base at the 90% line endpoint. */
 .leadership-journey>.programs::after{left:auto;right:90%;border-right-width:25px}
 @media(max-width:600px){.leadership-journey>.programs::after{left:auto;right:90%;border-right-width:18px}}
+
+/* Final client requests: bottom direction cues, compact approach, linked hero pillars. */
+.path-direction{position:absolute;left:50%;bottom:calc(-1 * var(--path-width) / 2);transform:translate(-50%,50%);width:48px;height:36px;z-index:2;pointer-events:none;background:#fff}
+.path-direction svg{display:block;width:100%;height:100%;overflow:visible}.path-direction path{fill:none;stroke:#91aa6d;stroke-width:5;stroke-linecap:square;stroke-linejoin:miter}
+.approach>.path-direction{transform:translate(-50%,50%) rotate(180deg)}
+.hero-art a.orbit-label{text-decoration:none;cursor:pointer;transition:border-color .15s,background-color .15s}.hero-art a.orbit-label:hover{background:#304e66;border-color:#cbe9a3}.hero-art a.orbit-label:focus-visible{outline:3px solid #cbe9a3;outline-offset:5px}
+.pillar[id]{scroll-margin-top:28px}
+.leadership-journey>.approach{padding-top:40px;padding-bottom:40px}.approach .section-head h2{font-size:clamp(2.2rem,3.5vw,3rem);margin:12px 0 16px}.approach .section-intro{margin-bottom:0}.approach .method-intro{margin-top:22px;padding-top:16px;gap:20px}.approach .method-intro p{margin:0}.approach .method{margin-top:18px;gap:25px}.approach .pillar{min-height:0}.approach .pillar summary{min-height:100px}.approach .pillar-title{font-size:1.8rem;margin:18px 0 12px}.approach .pillar-detail{margin-top:12px;padding-top:12px}.approach .pillar-detail p{margin-bottom:12px}.approach .process{margin-top:28px}.approach .process span{padding-top:12px}
+@media(max-width:850px){.approach .method{gap:18px}.approach .pillar summary{min-height:90px}.approach .method-intro{gap:8px}.path-direction{width:40px;height:30px}}
+@media(max-width:600px){.leadership-journey>.approach{padding-top:32px;padding-bottom:32px}.approach .section-head h2{font-size:2rem}.approach .pillar-title{font-size:1.6rem}.approach .process{margin-top:22px}.path-direction{width:34px;height:26px}}
+
+/* Align the four process rules even when a label wraps onto extra lines. */
+.approach .process{align-items:stretch}.approach .process>span{align-self:stretch}
+
+/* Quiet, accessible return control, shown only after the hero has passed. */
+.back-to-top{position:fixed;right:max(20px,env(safe-area-inset-right));bottom:max(20px,env(safe-area-inset-bottom));z-index:20;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-width:44px;min-height:44px;padding:10px 14px;border:1px solid #bdcba9;border-radius:2px;background:#fff;color:var(--act-navy);font-size:.75rem;line-height:1;font-weight:400;text-decoration:none;box-sizing:border-box}.back-to-top[hidden]{display:none}.back-to-top svg{fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}.back-to-top:hover{background:#f0f5e9;border-color:#7da52b}.back-to-top:focus-visible{outline:3px solid #7da52b;outline-offset:4px}@media(max-width:600px){.back-to-top{right:max(14px,env(safe-area-inset-right));bottom:max(14px,env(safe-area-inset-bottom));padding:10px}.back-to-top span{display:none}}
